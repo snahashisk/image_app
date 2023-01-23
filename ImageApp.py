@@ -9,13 +9,14 @@ st.set_page_config(
 
 col1, col2, col3 = st.columns([3, 5, 2])
 with col1:
-    st.title("Upload App")
-    choice = st.selectbox("Select the File Type", [
+
+    choice = st.selectbox("Select the attribute to be changed: ", [
         "Sharpness", "Brightness", "Contrast", "Color"])
 
 
 imagePixelValues = []
 with col2:
+    st.title("Image Processing App")
     file = st.file_uploader("Upload your Image File", type=["png", "jpg"])
     if file is not None:
         im = Image.open(file)
